@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 
@@ -26,7 +28,9 @@ export function Details() {
               <span>Distribuidora: Valve</span>
             </p>
 
-            <Button>Adicionar ao carrinho</Button>
+            <Link to={"/cart"}>
+              <Button>Adicionar ao carrinho</Button>
+            </Link>
             <Button>Adicionar à lista de desejos</Button>
           </Information>
         </Content>
