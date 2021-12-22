@@ -7,7 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     --header-color: #171A21;
     --gray: #C5C3C0;
     --white: #fff;
-    --light-blue: ##366782;
+    --light-blue: #366782;
+    --buy-color: #679E1E;
   }
 
   html {
