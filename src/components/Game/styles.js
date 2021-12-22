@@ -13,6 +13,11 @@ export const Content = styled.div`
   grid-template-rows: auto;
 
   gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
 `;
 
 export const GameContent = styled.div`
