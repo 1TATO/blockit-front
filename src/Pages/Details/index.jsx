@@ -31,7 +31,9 @@ export function Details() {
             <Link to={"/cart"}>
               <Button>Adicionar ao carrinho</Button>
             </Link>
-            <Button>Adicionar à lista de desejos</Button>
+            <Link to={"/wishlist"}>
+              <Button>Adicionar à lista de desejos</Button>
+            </Link>
           </Information>
         </Content>
       </Container>

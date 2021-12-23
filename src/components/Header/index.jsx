@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoImg from "../../assets/BlockIT.png";
 
 import { Container, Content } from "./styles";
@@ -7,9 +8,13 @@ export function Header() {
     <Container>
       <Content>
         <img src={logoImg} alt="Block IT" />
-        <button type="button">LOJA</button>
+        <Link to={"/"}>
+          <button type="button">LOJA</button>
+        </Link>
         <button type="button">PERFIL</button>
-        <button type="button">CARRINHO</button>
+        <Link to={"/cart"}>
+          <button type="button">CARRINHO</button>
+        </Link>
         <button type="button">PERFIL</button>
       </Content>
     </Container>

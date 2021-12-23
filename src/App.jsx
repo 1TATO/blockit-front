@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { Details } from "./Pages/Details";
 import { Cart } from "./Pages/Cart";
+import { Wishlist } from "./Pages/Wishlist";
 
 import { GlobalStyle } from "./styles/global";
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/details" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>
