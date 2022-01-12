@@ -1,40 +1,50 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Moment from "moment";
+
+import api from "../../services/api";
 
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 
-import gameImg from "../../assets/cs.jpg";
-
 import { Container, Content, Information } from "./styles";
 
 export function Details() {
+  const [product, setProduct] = useState({});
+  const slug = useParams();
+
+  const launchDate = Moment(product.launchDate).format("DD/MM/YYYY");
+
+  useEffect(() => {
+    api.get(`/products/${slug.id}`).then((response) => {
+      setProduct(response.data);
+    });
+  }, [slug.id]);
+
   return (
     <>
       <Header />
-
       <Container>
         <Content>
-          <img src={gameImg} alt="Game background" />
+          <img src={product.imageUrl} alt="Game background" />
 
-          <Information>
-            <p>
-              O Counter-Strike: Global Offensive (CS:GO) melhora a jogabilidade
-              de ação baseada em equipes na qual foi pioneiro quando lançado há
-              19 anos. O CS:GO contém novos mapas, personagens e armas, além de
-              contar com versões atualizadas de conteúdos do CS clássico (como
-              de_dust2).
-              <span>Data de lançamento: 21/ago/2012</span>
-              <span>Desenvolvedor: Valve, Hidden Path Entertainment</span>
-              <span>Distribuidora: Valve</span>
-            </p>
+          {product && (
+            <Information>
+              <p>
+                {product.description}
+                <span>Data de lançamento: {launchDate}</span>
+                <span>Desenvolvedor: {product.developer}</span>
+                <span>Distribuidora: {product.distributor}</span>
+              </p>
 
-            <Link to={"/cart"}>
-              <Button>Adicionar ao carrinho</Button>
-            </Link>
-            <Link to={"/wishlist"}>
-              <Button>Adicionar à lista de desejos</Button>
-            </Link>
-          </Information>
+              <Link to={"/cart"}>
+                <Button>Adicionar ao carrinho</Button>
+              </Link>
+              <Link to={"/wishlist"}>
+                <Button>Adicionar à lista de desejos</Button>
+              </Link>
+            </Information>
+          )}
         </Content>
       </Container>
     </>

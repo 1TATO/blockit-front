@@ -4,8 +4,6 @@ import { FaHeart, FaCartPlus } from "react-icons/fa";
 
 import api from "../../services/api";
 
-import gameImg from "../../assets/cs.jpg";
-
 import { Container, Content, GameContent, Details, Icons } from "./styles";
 
 export function Game() {

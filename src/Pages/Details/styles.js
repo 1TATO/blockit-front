@@ -11,7 +11,7 @@ export const Content = styled.div`
 
   img {
     width: 50%;
-    height: 700px;
+    height: 300px;
     margin-right: 15px;
   }
 `;
