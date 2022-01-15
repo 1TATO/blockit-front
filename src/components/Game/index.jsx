@@ -22,14 +22,14 @@ export function Game() {
               <img src={product.imageUrl} alt={product.name} />
               <Details>
                 <span>{product.name}</span>
-                <span>R$ {product.price}</span>
+                <span>R$ {product.price},00</span>
               </Details>
-              <Icons>
-                <FaHeart />
-                <FaCartPlus />
-              </Icons>
             </GameContent>
           </Link>
+          //   <Icons>
+          //   <FaHeart />
+          //   <FaCartPlus />
+          // </Icons>
         ))}
       </Content>
     </Container>

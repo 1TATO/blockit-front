@@ -11,11 +11,12 @@ export function Header() {
         <Link to={"/"}>
           <button type="button">LOJA</button>
         </Link>
-        <button type="button">PERFIL</button>
+        <Link to={"/wishlist"}>
+          <button type="button">LISTA DE DESEJOS</button>
+        </Link>
         <Link to={"/cart"}>
           <button type="button">CARRINHO</button>
         </Link>
-        <button type="button">PERFIL</button>
       </Content>
     </Container>
   );

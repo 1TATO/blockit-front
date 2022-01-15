@@ -34,7 +34,14 @@ export const Information = styled.div`
     }
 
   button {
-    margin-top: 300px;
-    margin-right: 15px;
+    width: 220px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 30px 5px;
+    border: none;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 `;

@@ -7,10 +7,6 @@ export const Container = styled.div`
   h1 {
     margin-bottom: 25px;
   }
-
-  button {
-    margin-left: 80%;
-  }
 `;
 
 export const Item = styled.div`
@@ -26,12 +22,13 @@ export const Item = styled.div`
   margin-bottom: 15px;
 
   img {
-    width: 80px;
+    width: 220px;
     margin-right: 15px;
   }
 
   p {
-    margin-right: 75%;
+    width: 400px;
+    margin-right: 35%;
   }
 `;
 
@@ -46,10 +43,19 @@ export const Option = styled.div`
 
   svg {
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0;
 
     &:hover {
       filter: brightness(0.90);
     }
+  }
+`;
+
+export const Footer = styled.div`
+  max-width: 1120px;
+  margin: 30px auto;
+
+  button {
+    margin-left: 80%;
   }
 `;

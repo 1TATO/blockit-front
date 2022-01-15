@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartContextProvider } from "./context/CartContext";
 
 import { Home } from "./Pages/Home";
 import { Details } from "./Pages/Details";
@@ -10,12 +11,14 @@ import { GlobalStyle } from "./styles/global";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details/:id" element={<Details />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-      </Routes>
+      <CartContextProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+        </Routes>
+      </CartContextProvider>
       <GlobalStyle />
     </BrowserRouter>
   );

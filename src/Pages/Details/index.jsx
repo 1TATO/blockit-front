@@ -7,13 +7,22 @@ import api from "../../services/api";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 
+import { useCartContext } from "../../context/CartContext";
+
 import { Container, Content, Information } from "./styles";
 
 export function Details() {
+  const { handleAddProductOnCart, handleRemoveProductOnCart } =
+    useCartContext();
+
   const [product, setProduct] = useState({});
   const slug = useParams();
 
   const launchDate = Moment(product.launchDate).format("DD/MM/YYYY");
+
+  function handleAddProduct(product) {
+    handleAddProductOnCart(product);
+  }
 
   useEffect(() => {
     api.get(`/products/${slug.id}`).then((response) => {
@@ -38,10 +47,12 @@ export function Details() {
               </p>
 
               <Link to={"/cart"}>
-                <Button>Adicionar ao carrinho</Button>
+                <button type="button" onClick={() => handleAddProduct(product)}>
+                  Adicionar ao carrinho
+                </button>
               </Link>
               <Link to={"/wishlist"}>
-                <Button>Adicionar à lista de desejos</Button>
+                <button>Adicionar à lista de desejos</button>
               </Link>
             </Information>
           )}
