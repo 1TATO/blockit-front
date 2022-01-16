@@ -13,11 +13,6 @@ export const Content = styled.div`
   grid-template-rows: auto;
 
   gap: 2rem;
-
-  a {
-    text-decoration: none;
-    color: var(--white);
-  }
 `;
 
 export const GameContent = styled.div`
@@ -26,11 +21,16 @@ export const GameContent = styled.div`
 
   box-shadow: 2px 2px 3px 1px black;
 
-  height: 630px;
+  height: 330px;
   width: 350px;
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--white);
   }
 `;
 
@@ -38,10 +38,8 @@ export const Details = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 14px;
-
   span {
-    margin-bottom: 10px;
+    padding: 14px;
   }
 `;
 

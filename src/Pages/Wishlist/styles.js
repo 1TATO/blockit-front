@@ -26,12 +26,13 @@ export const Item = styled.div`
   margin-bottom: 15px;
 
   img {
-    width: 80px;
+    width: 220px;
     margin-right: 15px;
   }
 
   p {
-    margin-right: 75%;
+    width: 400px;
+    margin-right: 35%;
   }
 `;
 

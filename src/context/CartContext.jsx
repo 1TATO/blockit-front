@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
@@ -19,8 +19,10 @@ const CartContextProvider = ({ children }) => {
     if (!productInCart) {
       setCart([...cart, product]);
       localStorage.setItem("@BlockItCart", JSON.stringify([...cart, product]));
+
+      alert("Produto adicionado no carrinho");
     } else {
-      alert("Produto ja adicionado");
+      alert("Produto ja adicionado no carrinho");
     }
   }
 
