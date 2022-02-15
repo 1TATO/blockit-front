@@ -6,8 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
 
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
